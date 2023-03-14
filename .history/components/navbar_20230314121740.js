@@ -6,11 +6,8 @@ import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
 import Link from 'next/link'
 import styles from '@/styles/Home.module.css'
-import { useRouter }  from 'next/router'
 
 export default function MenuAppBar(props) {
-
-  const router = useRouter()
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -19,7 +16,7 @@ export default function MenuAppBar(props) {
           <Typography variant="h6" color="inherit" component="div">
             <Link className={styles.link} href='/'>Bookworm</Link>
           </Typography>
-          <Avatar src={props.src} onClick={()=>router.push('/profile')} />
+          <Avatar src={props.src} onClick='/profile' />
         </Toolbar>
       </AppBar>
     </Box>

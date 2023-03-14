@@ -13,7 +13,7 @@
     "db:seed": "npx dotenv -e .env.local -- prisma db seed",
     "prisma:generate": "npx dotenv -e .env.local -- prisma generate",
     "prisma:studio": "npx dotenv -e .env.local -- prisma studio",
-    "production:build": "npx prisma generate && npx prisma migrate deploy && next build"
+    "production:build": "npx prisma generate && npx prisma migrate deploy && next build" 
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -21,7 +21,6 @@
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.12",
     "@mui/styled-engine-sc": "^5.11.11",
-    "@prisma/client": "4.11.0",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "lottie-react": "^2.4.0",

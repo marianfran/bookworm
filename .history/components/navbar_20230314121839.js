@@ -19,7 +19,7 @@ export default function MenuAppBar(props) {
           <Typography variant="h6" color="inherit" component="div">
             <Link className={styles.link} href='/'>Bookworm</Link>
           </Typography>
-          <Avatar src={props.src} onClick={()=>router.push('/profile')} />
+          <Avatar src={props.src} onClick={()=>router.push('/library')} />
         </Toolbar>
       </AppBar>
     </Box>

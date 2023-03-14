@@ -73,25 +73,9 @@
 
 /* Profile */
 
-.profilecontainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.profileheading {
-    margin-bottom: 0;
-}
-
-.profileemail {
-    margin-top: 0;
-    font-size: 18px;
-}
-
 .avatarimg {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    border: 6px solid #42ae9a;
+
 }

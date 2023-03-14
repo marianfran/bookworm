@@ -50,7 +50,7 @@ export default function Component() {
             <div className={styles.lottie}>
               <Lottie animationData={dancingbook} width={100} height={100} />
             </div>
-            <h3>Uh-oh! Looks like you are not signed in yet</h3> 
+            <h3>Uh-oh! Looks like you are not signed in yet</h3> <br />
           <ButtonApp name='Sign In' onClick={() => signIn()}></ButtonApp>
         </div>
     </div> 

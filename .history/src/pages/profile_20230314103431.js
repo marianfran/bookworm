@@ -1,7 +1,6 @@
 import { useSession, signIn, signOut } from "next-auth/react"
 import { getServerSession } from "next-auth/next"
 import { authOptions } from "./api/auth/[...nextauth]"
-import { useRouter }  from 'next/router'
 import MenuAppBar from "../../components/navbar"
 import ButtonApp from '../../components/button'
 import styles from '@/styles/Home.module.css'
@@ -9,8 +8,6 @@ import Lottie from "lottie-react";
 import dancingbook from "../../public/dancingbook.json";
 
 export default function Component() {
-
-  const router = useRouter()
 
   const { data: session } = useSession()
 
@@ -46,11 +43,10 @@ export default function Component() {
         <MenuAppBar />
 
         <div className={styles.main}>
-          
+          <h3>Uh-oh! Looks like you are not signed in yet</h3> <br />
             <div className={styles.lottie}>
               <Lottie animationData={dancingbook} width={100} height={100} />
             </div>
-            <h3>Uh-oh! Looks like you are not signed in yet</h3> 
           <ButtonApp name='Sign In' onClick={() => signIn()}></ButtonApp>
         </div>
     </div> 
