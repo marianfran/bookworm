@@ -1,0 +1,109 @@
+.container {
+    background-color: #fefae0;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.link {
+    color: #FDf4f4;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wormimage {
+    margin-top: 10%
+}
+
+.heading {
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 0;
+}
+
+.subheading {
+    margin-top: 0;
+}
+
+/* Buttons */
+.button {
+    margin: 10px;
+    background-color: #42ae9a;
+    color: #FDf4f4;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 15px;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+  }
+  
+  .buttongrp {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .button:hover{
+    background-color: #2d7b6c;
+    color: #FDf4f4;
+    box-shadow: 0px 15px 20px rgba(255, 255, 255, 0.4);
+    transform: translateY(-7px);
+  }
+
+/* Lottie */
+.lottie {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+}
+
+/* Profile */
+
+.profilecontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profileheading {
+    margin-bottom: 0;
+}
+
+.profileemail {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.avatarimg {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 6px solid #42ae9a;
+}
+
+/* Post Form */
+.postform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    background-color: #c2e9e2;;
+    padding: 25px;
+    border-radius: 10px;
+}

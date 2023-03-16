@@ -1,0 +1,17 @@
+/* Book */
+.book {
+    background-color: antiquewhite;
+    padding: 10px 2px 10px 2px;
+}
+.title {
+    margin: 0;
+}
+.author {
+    margin: 0;
+    font-size: 20px;
+}
+.genre {
+    margin: 0;
+    font-size: 17px;
+    font-style: italic;
+}

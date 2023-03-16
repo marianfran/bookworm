@@ -1,0 +1,13 @@
+/* Book */
+.title {
+    margin: 0;
+}
+.author {
+    margin: 0;
+    font-size: 18px;
+}
+.genre {
+    margin: 0;
+    font-size: 18px;
+    font-style: italic;
+}
