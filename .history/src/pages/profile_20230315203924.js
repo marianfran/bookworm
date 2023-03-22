@@ -1,11 +1,12 @@
 import { useSession, signIn, signOut } from "next-auth/react"
+import { getServerSession } from "next-auth/next"
+import { authOptions } from "./api/auth/[...nextauth]"
 import { useRouter }  from 'next/router'
 import MenuAppBar from "../../components/navbar"
 import ButtonApp from '../../components/button'
 import styles from '@/styles/Home.module.css'
 import Lottie from "lottie-react";
 import dancingbook from "../../public/dancingbook.json";
-import Image from 'next/image'
 
 export default function Component() {
 
@@ -25,7 +26,7 @@ export default function Component() {
 
             <div className={styles.profilecontainer}>
               <h1>My Profile</h1>
-              <Image className={styles.avatarimg} src={session.user.image} width={100} height={100} />
+              <img className={styles.avatarimg} src={session.user.image} />
               <h2 className={styles.profileheading}>{session.user.name}</h2>
               <p className={styles.profileemail}> {session.user.email} </p>
 

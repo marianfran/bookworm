@@ -25,7 +25,7 @@ export default function Component() {
 
             <div className={styles.profilecontainer}>
               <h1>My Profile</h1>
-              <Image className={styles.avatarimg} src={session.user.image} width={100} height={100} />
+              <Image className={styles.avatarimg} src={session.user.image} />
               <h2 className={styles.profileheading}>{session.user.name}</h2>
               <p className={styles.profileemail}> {session.user.email} </p>
 

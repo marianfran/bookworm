@@ -17,6 +17,7 @@ export default function Library({posts}){
 
     const [currentPosts, setCurrentPosts] = useState(posts)
 
+ 
     /* Session */
     const { data: session } = useSession()
 
@@ -38,6 +39,7 @@ export default function Library({posts}){
         setCurrentPosts(newPosts)
     }
     
+
 
     return(
     <div className={styles.container}>

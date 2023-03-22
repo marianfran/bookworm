@@ -17,6 +17,7 @@ export default function Library({posts}){
 
     const [currentPosts, setCurrentPosts] = useState(posts)
 
+ 
     /* Session */
     const { data: session } = useSession()
 
@@ -34,10 +35,9 @@ export default function Library({posts}){
     /* Delete */
     const handleDelete = async (id) => {
         await axios.delete(`/api/posts/${id}`)
-        const newPosts = currentPosts.filter((post) => post.id !== id)
-        setCurrentPosts(newPosts)
+        setCurrentPosts(currentPosts.filter((post) => post.id !== id))
     }
-    
+
 
     return(
     <div className={styles.container}>

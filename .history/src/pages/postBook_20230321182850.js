@@ -1,7 +1,6 @@
+import { useState } from 'react';
 import styles from '@/styles/Post.module.css'
 import ButtonApp from '../../components/button'
-
-import axios from 'axios'
 
 export function Book(props) {
 

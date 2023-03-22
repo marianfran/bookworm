@@ -10,6 +10,7 @@ import { Book } from './postBook'
 import { useState} from 'react';
 import Lottie from "lottie-react";
 import book from "../../public/books.json";
+import ButtonApp from '../../components/button'
 
 export default function Library({posts}){
 
@@ -17,6 +18,7 @@ export default function Library({posts}){
 
     const [currentPosts, setCurrentPosts] = useState(posts)
 
+ 
     /* Session */
     const { data: session } = useSession()
 
@@ -32,12 +34,10 @@ export default function Library({posts}){
     }
 
     /* Delete */
-    const handleDelete = async (id) => {
-        await axios.delete(`/api/posts/${id}`)
-        const newPosts = currentPosts.filter((post) => post.id !== id)
-        setCurrentPosts(newPosts)
-    }
-    
+        const handleDelete = async (id) => {
+          await axios.delete(`/api/posts/${id}`)
+          setCurrentPosts(currentPosts.filter((post) => post.id !== id))
+      }
 
     return(
     <div className={styles.container}>
@@ -63,9 +63,10 @@ export default function Library({posts}){
                 <h2>My Books</h2>
 
               {currentPosts.map((post) => (
-                <Book key={post.id} name={post.title} author={post.author} category={post.genre} onDelete={handleDelete}/>
+                <Book key={post.id} name={post.title} author={post.author} category={post.genre}/>
               ))}
 
+                <ButtonApp name='Delete' onClick={() => handleDelete(id)}/>
           </div>
         </main> 
 
