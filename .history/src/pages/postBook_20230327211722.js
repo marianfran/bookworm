@@ -2,7 +2,8 @@ import styles from '@/styles/Post.module.css'
 import ButtonApp from '../../components/button'
 import axios from 'axios'
 
-export default function Book( props ) {
+
+export function Book( props ) {
 
     const { id } = props;
 

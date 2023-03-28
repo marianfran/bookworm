@@ -14,5 +14,5 @@ model Post {
   id        Int      @id @default(autoincrement())
   title     String  
   author    String? @db.Text
-  genre     String
+  genre     String? @db.Text
 }
