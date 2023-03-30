@@ -1,8 +1,6 @@
 import NextAuth from "next-auth"
 import GithubProvider from "next-auth/providers/github"
 
-const secret = process.env.MY_SECRET
-
 export const authOptions = {
   // Configure one or more authentication providers
   providers: [
@@ -12,7 +10,6 @@ export const authOptions = {
     }),
     // ...add more providers here
   ],
-  secret,
 }
 
 export default NextAuth(authOptions)

@@ -12,7 +12,6 @@ export const authOptions = {
     }),
     // ...add more providers here
   ],
-  secret,
 }
 
 export default NextAuth(authOptions)
