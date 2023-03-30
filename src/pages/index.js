@@ -46,8 +46,14 @@ export default function Home() {
 
         <ButtonApp 
           className={styles.button}
-          name="Get Started"
+          name="Login"
           onClick={()=>router.push('/profile')}
+        />
+
+        <ButtonApp 
+          className={styles.button}
+          name="Go to Library"
+          onClick={()=>router.push('/library')}
         />
       </main>
     </div>
