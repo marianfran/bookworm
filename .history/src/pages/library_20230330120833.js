@@ -14,9 +14,10 @@ import ButtonApp from '../../components/button'
 
 export default function Library({posts}){
 
+    console.log(posts)
+
     const [updatePopUp, setUpdatePopUp] = useState(false)
     const [pendingUpdate, setPendingUpdate] = useState()
-    console.log(pendingUpdate)
 
     const [currentPosts, setCurrentPosts] = useState(posts)
 
@@ -41,31 +42,23 @@ export default function Library({posts}){
     };
 
     /* Update */
-    const [activeid, setactiveId] = useState(pendingUpdate?.id)
-    const [newTitle, setNewTitle] = useState(pendingUpdate?.title)
-    const [newAuthor, setNewAuthor] = useState(pendingUpdate?.author)
-    const [newGenre, setNewGenre] = useState(pendingUpdate?.genre)
 
     const handlePendingUpdate = (post) => {
       console.log(post)
         setUpdatePopUp(!updatePopUp)
+        
         setPendingUpdate(post);
-        setactiveId(post.id)
-        setNewTitle(post.title)
-        setNewAuthor(post.author)
-        setNewGenre(post.genre)
+        console.log(pendingUpdate)
     };
 
-    const handleUpdate = async (e) => {
-      e.preventDefault()
-
-        const { data } = await axios.put(`/api/posts/${activeid}`, {
-            title: newTitle,
-            author: newAuthor,
-            genre: newGenre,
+    const handleUpdate = async (id, { title, author, genre }) => {
+        const { data } = await axios.put(`/api/posts/${id}`, {
+            title,
+            author,
+            genre,
         });
         console.log(data)
-        setCurrentPosts(currentPosts.map((post) => (post.id === activeid ? data : post)));
+        setCurrentPosts(currentPosts.map((post) => (post.id === id ? data : post)));
         setUpdatePopUp(!updatePopUp)
     };
 
@@ -114,32 +107,29 @@ export default function Library({posts}){
                 <p className={styles.author}>{props.author}</p>
                 <p className={styles.genre}>{props.category}</p> */}
 
-                <form className={styles.form} onSubmit={handleUpdate}>
+                <form className={styles.form} onSubmit={handleSubmit}>
                   <input
                     className={styles.input}
                     type="text"
                     name="title"
                     placeholder="Title"
-                    value={newTitle}
-                    onChange={(e) => setNewTitle(e.target.value)}
+                    defaultValue={pendingUpdate.title}
                   />
                   <input
                     className={styles.input}
                     type="text"
                     name="author"
                     placeholder="Author"
-                    value={newAuthor}
-                    onChange={(e) => setNewAuthor(e.target.value)}
+                    defaultValue={pendingUpdate.author}
                   />
                   <input
                     className={styles.input}
                     type="text"
                     name="genre"
                     placeholder="Genre"
-                    value={newGenre}
-                    onChange={(e) => setNewGenre(e.target.value)}
+                    defaultValue={pendingUpdate.genre}
                   />
-                  <ButtonApp name='Update Book'/>
+                  <ButtonApp name='Update Book' />
                 </form>
               </div>
             </div>

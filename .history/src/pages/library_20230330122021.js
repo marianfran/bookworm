@@ -41,7 +41,7 @@ export default function Library({posts}){
     };
 
     /* Update */
-    const [activeid, setactiveId] = useState(pendingUpdate?.id)
+
     const [newTitle, setNewTitle] = useState(pendingUpdate?.title)
     const [newAuthor, setNewAuthor] = useState(pendingUpdate?.author)
     const [newGenre, setNewGenre] = useState(pendingUpdate?.genre)
@@ -50,23 +50,20 @@ export default function Library({posts}){
       console.log(post)
         setUpdatePopUp(!updatePopUp)
         setPendingUpdate(post);
-        setactiveId(post.id)
         setNewTitle(post.title)
         setNewAuthor(post.author)
         setNewGenre(post.genre)
     };
 
-    const handleUpdate = async (e) => {
-      e.preventDefault()
-
-        const { data } = await axios.put(`/api/posts/${activeid}`, {
+    const handleUpdate = async (id, { title, author, genre }) => {
+        const { data } = await axios.put(`/api/posts/${pendingUpdate.id}`, {
             title: newTitle,
             author: newAuthor,
             genre: newGenre,
         });
         console.log(data)
-        setCurrentPosts(currentPosts.map((post) => (post.id === activeid ? data : post)));
-        setUpdatePopUp(!updatePopUp)
+        setCurrentPosts(currentPosts.map((post) => (post.id === id ? data : post)));
+        // setUpdatePopUp(!updatePopUp)
     };
 
     return(

@@ -66,7 +66,7 @@ export default function Library({posts}){
         });
         console.log(data)
         setCurrentPosts(currentPosts.map((post) => (post.id === activeid ? data : post)));
-        setUpdatePopUp(!updatePopUp)
+        // setUpdatePopUp(!updatePopUp)
     };
 
     return(

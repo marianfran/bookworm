@@ -65,8 +65,8 @@ export default function Library({posts}){
             genre: newGenre,
         });
         console.log(data)
-        setCurrentPosts(currentPosts.map((post) => (post.id === activeid ? data : post)));
-        setUpdatePopUp(!updatePopUp)
+        setCurrentPosts(currentPosts.map((post) => (post.id === id ? data : post)));
+        // setUpdatePopUp(!updatePopUp)
     };
 
     return(

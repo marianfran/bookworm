@@ -10,8 +10,8 @@ export default function Book( props ) {
             <p className={styles.genre}>{props.category}</p>
 
             <div className={styles.bookbtns}>
-                <ButtonApp name='Update' onClick={props.onClickUpdate}/>
-                <ButtonApp name='Delete' onClick={props.onClickDelete}/>
+                <ButtonApp name='Update' onClick={props.onClick}/>
+                <ButtonApp name='Delete' onClick={props.onClick}/>
             </div>
         </div>
     )

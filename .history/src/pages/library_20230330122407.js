@@ -56,17 +56,17 @@ export default function Library({posts}){
         setNewGenre(post.genre)
     };
 
-    const handleUpdate = async (e) => {
+    const handleUpdate = async (id, { title, author, genre }) => {
       e.preventDefault()
 
-        const { data } = await axios.put(`/api/posts/${activeid}`, {
+        const { data } = await axios.put(`/api/posts/${pendingUpdate.id}`, {
             title: newTitle,
             author: newAuthor,
             genre: newGenre,
         });
         console.log(data)
-        setCurrentPosts(currentPosts.map((post) => (post.id === activeid ? data : post)));
-        setUpdatePopUp(!updatePopUp)
+        setCurrentPosts(currentPosts.map((post) => (post.id === id ? data : post)));
+        // setUpdatePopUp(!updatePopUp)
     };
 
     return(

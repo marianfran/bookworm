@@ -32,7 +32,6 @@ export default async function handler(req, res) {
 
 
 
-
 // import { prisma } from '../../../server/db/client'
 
 // export default async function handler(req, res) {

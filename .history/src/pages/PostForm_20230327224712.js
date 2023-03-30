@@ -12,9 +12,6 @@ export default function PostForm({ onSubmit }) {
     const handleSubmit = (e) => {
         e.preventDefault();
         onSubmit({ title, author, genre });
-        setTitle('');
-        setAuthor('');
-        setGenre('');
     };
 
     return (
@@ -42,7 +39,7 @@ export default function PostForm({ onSubmit }) {
                 onChange={(e) => setAuthor(e.target.value)}
             />
             <br></br>
-
+{/* 
             <label htmlFor="title">Genre:</label>
             <input
                 id="genre"
@@ -50,13 +47,12 @@ export default function PostForm({ onSubmit }) {
                 required
                 value={genre}
                 placeholder="Enter Genre"
-                onChange={(e) => setGenre(e.target.value)}
+                onChange={(e) => setGenre(e.target.value)} */}
             />
             <br></br>
 
             <ButtonApp name='Add Book'></ButtonApp>
         </form>
-
         </div>
         
     );

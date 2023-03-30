@@ -1,6 +1,7 @@
 import styles from '@/styles/Post.module.css'
 import ButtonApp from '../../components/button'
 
+
 export default function Book( props ) {
 
     return (
@@ -10,8 +11,8 @@ export default function Book( props ) {
             <p className={styles.genre}>{props.category}</p>
 
             <div className={styles.bookbtns}>
-                <ButtonApp name='Update' onClick={props.onClickUpdate}/>
-                <ButtonApp name='Delete' onClick={props.onClickDelete}/>
+                <ButtonApp name='Update' onClick={props.onClick}/>
+                <ButtonApp name='Delete' onClick={props.onClick}/>
             </div>
         </div>
     )

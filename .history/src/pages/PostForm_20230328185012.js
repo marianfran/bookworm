@@ -12,9 +12,6 @@ export default function PostForm({ onSubmit }) {
     const handleSubmit = (e) => {
         e.preventDefault();
         onSubmit({ title, author, genre });
-        setTitle('');
-        setAuthor('');
-        setGenre('');
     };
 
     return (

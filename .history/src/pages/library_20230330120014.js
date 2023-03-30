@@ -14,9 +14,10 @@ import ButtonApp from '../../components/button'
 
 export default function Library({posts}){
 
+    console.log(posts)
+
     const [updatePopUp, setUpdatePopUp] = useState(false)
     const [pendingUpdate, setPendingUpdate] = useState()
-    console.log(pendingUpdate)
 
     const [currentPosts, setCurrentPosts] = useState(posts)
 
@@ -41,32 +42,12 @@ export default function Library({posts}){
     };
 
     /* Update */
-    const [activeid, setactiveId] = useState(pendingUpdate?.id)
-    const [newTitle, setNewTitle] = useState(pendingUpdate?.title)
-    const [newAuthor, setNewAuthor] = useState(pendingUpdate?.author)
-    const [newGenre, setNewGenre] = useState(pendingUpdate?.genre)
 
     const handlePendingUpdate = (post) => {
-      console.log(post)
         setUpdatePopUp(!updatePopUp)
+        console.log(post)
         setPendingUpdate(post);
-        setactiveId(post.id)
-        setNewTitle(post.title)
-        setNewAuthor(post.author)
-        setNewGenre(post.genre)
-    };
-
-    const handleUpdate = async (e) => {
-      e.preventDefault()
-
-        const { data } = await axios.put(`/api/posts/${activeid}`, {
-            title: newTitle,
-            author: newAuthor,
-            genre: newGenre,
-        });
-        console.log(data)
-        setCurrentPosts(currentPosts.map((post) => (post.id === activeid ? data : post)));
-        setUpdatePopUp(!updatePopUp)
+        console.log(pendingUpdate)
     };
 
     return(
@@ -109,38 +90,14 @@ export default function Library({posts}){
           updatePopUp ? 
             <div className={styles.mainpopup}>
               <div className={styles.book}>
-              {/* <div className={styles.book}>
-                <h3 className={styles.title}>{props.name}</h3>
+                {/* <h3 className={styles.title}>{props.name}</h3>
                 <p className={styles.author}>{props.author}</p>
                 <p className={styles.genre}>{props.category}</p> */}
 
-                <form className={styles.form} onSubmit={handleUpdate}>
-                  <input
-                    className={styles.input}
-                    type="text"
-                    name="title"
-                    placeholder="Title"
-                    value={newTitle}
-                    onChange={(e) => setNewTitle(e.target.value)}
-                  />
-                  <input
-                    className={styles.input}
-                    type="text"
-                    name="author"
-                    placeholder="Author"
-                    value={newAuthor}
-                    onChange={(e) => setNewAuthor(e.target.value)}
-                  />
-                  <input
-                    className={styles.input}
-                    type="text"
-                    name="genre"
-                    placeholder="Genre"
-                    value={newGenre}
-                    onChange={(e) => setNewGenre(e.target.value)}
-                  />
-                  <ButtonApp name='Update Book'/>
-                </form>
+                {/* <div className={styles.bookbtns}>
+                    <ButtonApp name='Update' onClick={props.onClickUpdate}/>
+                    <ButtonApp name='Delete' onClick={props.onClickDelete}/>
+                </div> */}
               </div>
             </div>
           : null

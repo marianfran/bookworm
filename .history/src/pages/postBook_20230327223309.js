@@ -1,7 +1,15 @@
 import styles from '@/styles/Post.module.css'
 import ButtonApp from '../../components/button'
+import axios from 'axios'
 
 export default function Book( props ) {
+
+    const { id } = props;
+
+    const handleDelete = async (id) => {
+        await axios.delete(`/api/posts/${id}`);
+        setCurrentPosts(currentPosts.filter((post) => post.id !== id));
+    }
 
     return (
         <div className={styles.book}>
@@ -10,8 +18,8 @@ export default function Book( props ) {
             <p className={styles.genre}>{props.category}</p>
 
             <div className={styles.bookbtns}>
-                <ButtonApp name='Update' onClick={props.onClickUpdate}/>
-                <ButtonApp name='Delete' onClick={props.onClickDelete}/>
+                <ButtonApp name='Update'/>
+                <ButtonApp name='Delete' onClick={() => handleDelete(id)}/>
             </div>
         </div>
     )
