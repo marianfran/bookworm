@@ -51,7 +51,7 @@ export default function Component() {
               <Lottie animationData={dancingbook} width={100} height={100} />
             </div>
             <h3>Uh-oh! Looks like you are not signed in yet</h3> 
-          <ButtonApp name='Sign In' onClick={() => signIn('github')}></ButtonApp>
+          <ButtonApp name='Sign In' onClick={() => router.push('/api/auth/signin')} />
         </div>
     </div> 
   )
